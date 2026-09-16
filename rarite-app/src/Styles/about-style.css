@@ -1,0 +1,195 @@
+html,body {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(201, 201, 199);
+    margin: 0;
+    padding: 0;
+    font-family: 'serif', sans-serif;
+}
+
+
+
+
+.header{
+     font-family: 'MonteCarlo', serif !important;
+     font-size: 130px !important;
+     font-weight: 300;
+     padding: 20px;
+     text-align: center;
+     padding-top: 40px;
+     margin-bottom: 20px;
+     animation: fadeInUP 1s ease-out forwards;
+
+
+}
+.navbar p{
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    padding: 20px;
+    border-radius: 15px;
+    margin: 20px;
+    line-height: 1.7;
+    max-width: 800px;
+    animation: fadeInUP 1s ease-out forwards;
+
+
+}
+.container text-center{
+    position: relative;
+}
+.col img{
+    position: absolute;
+    align-items: center;
+    width: 220px;
+    display: flex;
+    border-radius: 12px;
+    justify-content: center;
+    gap: 40px;
+    padding: 15px;
+
+}
+.col p{
+
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.7;
+    justify-content: center;
+    font-size: 16px;
+} 
+.nav{
+    width: 100%;
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid rgb(0, 0, 0, 0.04);
+    margin: 25px;
+    
+
+}
+@keyframes fadeInUP{
+    from{
+        opacity: 0;
+        transform: translate(30px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+}
+.nav a{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(5, 4, 4, 0.317) !important;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 6px;
+    transition: yellow 0.5s ease;
+}
+
+.nav a::after{
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 50%;
+    background-color: #000;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+
+}
+.found-italic{
+    text-align: center;
+    font-size: 28px;
+    letter-spacing: 2px;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    animation: fadeInUP 1s ease-out forwards;
+   
+    
+
+}
+.val{
+      text-align: center;
+    font-size: 28px;
+    letter-spacing: 2px;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    animation: fadeInUP 1s ease-out forwards;
+   
+    
+}
+.val1{
+    font-weight: bold;
+    display:flex;
+    justify-content: center;
+    transform: translate(-20%,0);
+    grid-template-columns: (3,1fr);
+    text-align: center;
+    letter-spacing: 1px;
+    font-size: 19px;
+    gap: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+.p1{
+    display: flex;
+    transform: translate(-20%,0);
+    justify-content: center;
+    font-size: 13px;
+    font-weight: bold;
+    color: gray;
+    
+    
+}
+.val2{
+     font-weight: bold;
+    display:flex;
+    justify-content: center;
+    transform: translate(-20%,0);
+    text-align: center;
+    letter-spacing: 1px;
+    font-size: 19px;
+    gap: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.p2{
+       display: flex;
+    transform: translate(-20%,0);
+    justify-content: center;
+    font-size: 13px;
+    font-weight: bold;
+    color: gray;
+}
+.val3{
+     font-weight: bold;
+    display:flex;
+    justify-content: center;
+    transform: translate(-20%,0);
+    text-align: center;
+    letter-spacing: 1px;
+    font-size: 19px;
+    gap: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.p3{
+        display: flex;
+    transform: translate(-20%,0);
+    justify-content: center;
+    font-size: 13px;
+    font-weight: bold;
+    color: gray;
+}
+.aes{
+       text-align: center;
+    font-size: 28px;
+    letter-spacing: 2px;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+   display: flex;
+   justify-content: center;
+   animation: fadeInUP 1s ease-out forwards;
+}

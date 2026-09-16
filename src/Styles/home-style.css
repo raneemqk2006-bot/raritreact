@@ -1,0 +1,130 @@
+body {
+  background-color: #ededed;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #1a1a1a;
+  overflow-x: hidden;
+}
+
+.hero-section {
+  width: 100%;
+  height: 100vh;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.hero-left {
+  height: 100vh;
+  position: relative;
+}
+
+.hero-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+.hero-left .navbar-brand {
+  font-family: "MonteCarlo", serif;
+  font-style: italic;
+  font-size: 5.7rem !important;
+  color: #959595 !important;
+  letter-spacing: 10px;
+   animation: fadeInUP 1s ease-out forwards;
+}
+.hero-right {
+  height: 100vh;
+  background-color: #e9ece8 !important; 
+  padding: 30px 60px !important;
+}
+.hero-section-nav .nav-link {
+  color: #4a4a4a !important;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.hero-section-nav .nav-link:hover {
+  color: #000 !important;
+}
+.content-wrapper {
+  max-width: 700px;
+}
+
+
+.hero-title {
+  font-family: serif;
+  font-size: 3.2rem;
+  color: #222;
+  line-height: 1.15;
+  font-weight: 400;
+}
+
+
+.hero-text {
+  color: #555 !important;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+
+.btn-luxury {
+  background-color: #38424b !important;
+  color: #ffffff !important;
+  border-radius: 25px !important;
+  padding: 10px 32px !important;
+  font-size: 0.78rem !important;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: none !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease !important;
+}
+
+.btn-luxury:hover {
+  background-color: #1e252b !important;
+  transform: translateY(-2px);
+}
+
+
+.quote-section {
+  font-family: "Times New Roman", serif;
+  font-style: italic;
+}
+
+.container{
+    animation: fadeInUp 1s ease-out forwards;
+
+
+}
+.whyrar{
+  font-family: 'Times New Roman', Times, serif;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: large;
+  font-weight: normal;
+  
+  
+
+}
+.feature.title{
+  font-size: 17px;
+
+
+}
+.card-title{
+  font-size: 17px;
+}
+
+.card{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 16px;
+  color: #666;
+  border-radius: 30px;
+  
+}
+

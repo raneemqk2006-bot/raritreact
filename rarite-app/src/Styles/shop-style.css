@@ -1,0 +1,171 @@
+html,body{
+    width: 100%;
+    background-color: rgb(201, 201, 199);
+}
+
+
+body {
+    background-color: rgb(201, 201, 199);
+    font-family: 'Poppins', sans-serif;
+    color: #333333;
+}
+.nav-shop {
+   
+       width: 100%;
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid rgb(0, 0, 0, 0.04);
+    margin: 25px;
+
+}
+
+.nav-shop-a a {
+     font-family: 'Times New Roman', Times, serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(5, 4, 4, 0.317) !important;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 6px;
+    transition: yellow 0.5s ease;
+}
+.nav-shop-a a::after{
+     position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 50%;
+    background-color: #000;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+
+}
+.nav-shop-a a:hover {
+    color: rgb(5, 4, 4) !important;
+}
+
+.logo {
+    font-family: 'MonteCarlo', serif !important;
+    font-size: 100px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 0;
+    animation: fadeInUP 1s ease-out forwards;
+}
+
+.logobrand {
+    font-family: 'MonteCarlo', serif !important;
+    font-size: 50px;
+    text-align: center;
+    font-style: italic;
+    font-weight: 300;
+    margin-top: -20px;
+    color: #555;
+    animation: fadeInUP 1s ease-out forwards;
+}
+.card {
+    background-color: transparent !important;
+    border: none !important; 
+    border-radius: 4px !important;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+
+.card-img-top {
+    border-radius: 4px !important;
+    background-color: #F0EDE9;
+    object-fit: cover;
+}
+
+
+.card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: #2c2c2c;
+    margin-top: 15px;
+}
+
+.card-text {
+    font-size: 13px;
+    color: #666;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+
+.btn-primary {
+    background-color: transparent !important; 
+    border: 1px solid #333 !important; 
+    color: #333 !important;
+    border-radius: 0px !important;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 8px 20px;
+    width: 100%; 
+    transition: all 0.3s ease-in-out !important;
+}
+
+
+.btn-primary:hover {
+    background-color: #333 !important;
+    color: #FFF !important;
+    border-color: #333 !important;
+}
+.container text-center{
+    position: relative;
+}
+
+.nav-footer{
+    padding: 20px 0;
+
+}
+.nav-footer-a a{
+     text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(5, 4, 4, 0.6) !important;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 6px;
+    margin: 0 15px;
+    font-size: 13px;
+    transition: color 0.5s ease;
+}
+.card {
+    transition: transform 0.3s ease;
+}
+.btn{
+    color: white;
+   
+}
+.btn-outline-success{
+      background-color: #444;
+        border: #444;
+        text-transform:uppercase;
+        transition: all 0.3s ease;
+
+}
+.btn-outline-success:active{
+     background-color: #555 !important;
+        transform: translateY(1px);
+        outline: none !important;
+}
+.btn-outline-success:hover{
+       background-color: #555;
+        transform: translateY(-1px);
+}
+.container-fluid{
+       background-color:  rgb(201, 201, 199) ;
+     
+}
+.hero-section{
+    background-color:   rgb(201, 201, 199) ;
+}
