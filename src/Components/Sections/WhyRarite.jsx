@@ -26,8 +26,8 @@ export default function WhyRarite(){
                 {features.map((feature) => (
                     <div key={feature.id} className='col-md-4'>
                         <div className="card h-100 p-4 shadow-sm">
-                            <h3 classNmae="title h5 mb-3">{feature.title}</h3>
-                            <p classNmae="des text-muted mb-0">{feature.description}</p>
+                            <h3 className="title h5 mb-3">{feature.title}</h3>
+                            <p className="des text-muted mb-0">{feature.description}</p>
                         </div>
                     </div>
                 ))}

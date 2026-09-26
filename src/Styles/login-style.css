@@ -10,6 +10,20 @@
         background: url(/public/jpg\(11\));
         
       }
+      .navbar p{
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    padding: 20px;
+    border-radius: 15px;
+    margin: 20px;
+    line-height: 1.7;
+    max-width: 800px;
+    animation: fadeInUP 1s ease-out forwards;
+
+
+}
+
       .hero-section{
         background: url(/public/jpg\(11\));
       }

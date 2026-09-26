@@ -15,9 +15,9 @@ export default function MainAbout() {
               style={{ backgroundColor: 'rgba(26, 26, 26, 0.02)', borderRadius: '12px' }}
             >
               <img 
-                src="/Analyse de la peau du visage selon l'expertise Celestetic en dermocosmetique.jpg" 
+                src="/eng.jpg" 
                 alt="Tech Skincare" 
-                className="img-fluid rounded-3 mb-4"
+                className="img-fluid rounded-3 mb-4" style={{height:'350px', objectFit:'cover',width:'100%'}}
               />
               <span className="text-muted small text-uppercase" style={{ letterSpacing: '1px' }}>
                 01 / Engineering
@@ -41,7 +41,7 @@ export default function MainAbout() {
                 src="/Midjourney Feed.jpg" 
                 alt="Clinical Science" 
                 className="img-fluid rounded-3 mb-4"
-                style={{ width: '100%' }}
+                style={{height:'350px',objectFit:'cover', width: '100%' }}
               />
               <span className="text-muted small text-uppercase" style={{ letterSpacing: '1px' }}>
                 02 / Science
@@ -88,7 +88,7 @@ export default function MainAbout() {
         <div className="row justify-content-center g-5 px-4 mb-4">
           <div className="col-md-5">
             <div className="p-4" style={{ backgroundColor: 'rgba(26, 26, 26, 0.02)', borderRadius: '12px' }}>
-              <img src="/You've probably seen Centella Asiatica in your favorite calming serum.jpg" className="img-fluid rounded" alt="Aesthetic 1" />
+              <img src="/centella.jpg" className="img-fluid rounded" alt="Aesthetic 1" />
             </div>
           </div>
           <div className="col-md-5">

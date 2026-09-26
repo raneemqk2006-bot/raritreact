@@ -23,14 +23,14 @@ export default function MainShop() {
       title: 'Beauty of Joseon SunScreen',
       desc: 'Provides high-level protection against UVA and UVB rays with SPF50+ PA++++ Hydrates skin deeply with 30% rice seed water and soothing panthenol (Vitamin B5) Calms and revitalises skin stressed by sun exposure Lightweight, watery lotion texture absorbs quickly without white cast or greasy residue Leaves a fresh, semi-matte, dewy finish ideal for oily and combination skin Suitable for all skin types. 50ml',
       price: '15.85 JOD',
-      imgSrc: '/Beauty of Joseon Relief Sun Aqua-Fresh_ Rice + B5 SPF50+PA++++.jpg'
+      imgSrc: '/sunscreenbeautyofjoseon.jpg'
     },
     {
       id: 4,
       title: 'Anua - Niacinamide 10 TXA 4 Serum',
       desc: 'If your skin regimen can only do so much, power it up with this Anua niacinamide serum.',
       price: '18.80 JOD',
-      imgSrc: '/Not To Brag, But Since Prioritising These Korean Skincare Ingredients, My Skin.jpg'
+      imgSrc: '/Not To Brag.jpg'
     },
     {
       id: 5,
@@ -51,7 +51,7 @@ export default function MainShop() {
       title: 'Beauty of Joseon - Calming Serum Jumbo',
       desc: 'This serum is enriched with EWG green grade ingredients including 50% green tea leaf water, 30% mugwort extract and 2% panthenol.',
       price: '19.5 JOD',
-      imgSrc: '/Beauty of Joseon - Calming Serum Green Tea + Panthenol - łagodzące Serum Do Twarzy Z Zieloną Herbatą I Pantenolem.jpg'
+      imgSrc: '/Beauty of Joseon -calmingserumtea.jpg'
     },
     {
       id: 8,

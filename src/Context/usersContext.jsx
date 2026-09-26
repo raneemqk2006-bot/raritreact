@@ -1,13 +1,27 @@
-import { createContext, useState } from "react"
+import { createContext, useState, useEffect } from "react"
 
-export const userContext = createContext();
+export const usersContext = createContext();
 export default function UserProvider({children}){
-    const [users,setUsers] = useState([]);
-    localStorage.setItem("users",JSON.stringify(users));
-    const allUsers = JSON.parse(localStorage.getItem("users"));
+    const [allUsers,setUsers] = useState(() =>{
+        try{
+            const savedUsers = localStorage.getItem("users");
+        return savedUsers ? JSON.parse(savedUsers): [];
+        } catch(e){
+            return [];
+        }
+        
+    } );
+    useEffect(() => {
+        localStorage.setItem("users", JSON.stringify(allUsers));
+
+    }, [allUsers]);
 
 
-    return<userContext.Provider values={(allUsers, setUsers)}>
+    return (
+    <usersContext.Provider value={{allUsers, setUsers}}>
         {children}
-    </userContext.Provider>;
+    </usersContext.Provider>
+
+    );
+
 }

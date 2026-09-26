@@ -1,17 +1,20 @@
 import { useState } from 'react';
 import { Container, TextField, Paper, Button, Typography, Box } from '@mui/material';
+import {useAuth} from '../../Hooks/useAuth';
 
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const { login } = useAuth();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log({ email, password });
+    login({ email, password });
   };
 
-  return (
-    <Box 
+  return <>
+  
+  <Box 
       sx={{ 
         minHeight: '100vh', 
         bgcolor: '#f4f4f2', 
@@ -69,7 +72,7 @@ export default function Login() {
               fullWidth 
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              InputProps={{ disableUnderline: true }}
+              slotProps={{ disableUnderline: true }}
               sx={{ 
                 bgcolor: '#ffffff', 
                 borderRadius: '12px',
@@ -85,7 +88,7 @@ export default function Login() {
               fullWidth 
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              InputProps={{ disableUnderline: true }}
+              slotProps={{ disableUnderline: true }}
               sx={{ 
                 bgcolor: '#ffffff', 
                 borderRadius: '12px',
@@ -118,5 +121,6 @@ export default function Login() {
         </Paper>
       </Container>
     </Box>
-  );
+  </>
+
 }

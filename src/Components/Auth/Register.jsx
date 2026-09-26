@@ -1,7 +1,10 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Container, TextField, Paper, Button, Typography, Box } from '@mui/material';
+import {useAuth} from '../../Hooks/useAuth';
+
 
 export default function Register() {
+  const { register }= useAuth();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -9,12 +12,12 @@ export default function Register() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log({ name, email, password, confirmPassword });
+    register({ name, email, password, confirmPassword });
   };
 
   return (
     <Container maxWidth="xs">
-      <Paper elevation={0} sx={{ p: 4,m: 4, borederRadius:'24px',bgcolor:'rgba(255,255,255,0.75)' ,backdropFilter:'blur(10px)',border: '1px solid rgba(255,255,255,0.8)',boxShadow:'0 8px 32px rgba(0,0,0,0)' }}>
+      <Paper elevation={0} sx={{ p: 4,m: 4, borderRadius:'24px',bgcolor:'rgba(255,255,255,0.75)' ,backdropFilter:'blur(10px)',border: '1px solid rgba(255,255,255,0.8)',boxShadow:'0 8px 32px rgba(0,0,0,0)' }}>
         <Typography variant="h5" align="center" sx={{ fontFamily:'serif',fontStyle:'italic',mb: 1, fontWeight: '500',color:'#222' }}>
           Register
         </Typography>
@@ -26,7 +29,7 @@ export default function Register() {
             fullWidth 
             value={name}
             onChange={(e) => setName(e.target.value)}
-            InputProps={{ disableUnderline: true }}
+            slotProps={{ disableUnderline: true }}
               sx={{ 
                 bgcolor: '#ffffff', 
                 borderRadius: '12px'}}
@@ -40,7 +43,7 @@ export default function Register() {
             fullWidth 
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            InputProps={{ disableUnderline: true }}
+            slotProps={{ disableUnderline: true }}
               sx={{ 
                 bgcolor: '#ffffff', 
                 borderRadius: '12px'}}
@@ -54,7 +57,7 @@ export default function Register() {
             fullWidth 
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            InputProps={{ disableUnderline: true }}
+            slotProps={{ disableUnderline: true }}
               sx={{ 
                 bgcolor: '#ffffff', 
                 borderRadius: '12px'}}
@@ -67,7 +70,7 @@ export default function Register() {
             fullWidth 
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
-            InputProps={{ disableUnderline: true }}
+            slotProps={{ disableUnderline: true }}
               sx={{ 
                 bgcolor: '#ffffff', 
                 borderRadius: '12px'}}

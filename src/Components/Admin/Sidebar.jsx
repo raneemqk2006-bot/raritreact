@@ -1,16 +1,30 @@
-import {Box, List, ListItemButton} from '@mui/material';
-export default function Sidebar({setselectedPage}){
-    return<>
-    <Box>
-        <List sx={{color:"white"}}>
-            <ListItemButton onClick={ () => setselectedPage('DashBoard')} sx={{bgcolor:'rgba(255,255,255,0.1)'}}>DashBaord</ListItemButton>
-            <ListItemButton onClick={ () => setselectedPage('Products')} sx={{bgcolor:'rgba(255,255,255,0.1)'}}>Products</ListItemButton>
-            <ListItemButton onClick={ () => setselectedPage('Categories')} sx={{bgcolor:'rgba(255,255,255,0.1)'}}>Categories</ListItemButton>
-            <ListItemButton onClick={ () => setselectedPage('Orders')} sx={{bgcolor:'rgba(255,255,255,0.1)'}}>Orders</ListItemButton>
-            <ListItemButton onClick={ () => setselectedPage('Users')} sx={{bgcolor:'rgba(255,255,255,0.1)'}}>Users</ListItemButton>
-            <ListItemButton onClick={ () => setselectedPage('Profile')} sx={{bgcolor:'rgba(255,255,255,0.1)'}}>Profile</ListItemButton>
-        </List>
+import { Box, List, ListItem, ListItemButton, ListItemText, Typography, Paper } from "@mui/material";
 
-    </Box>
-    </>
+export default function Sidebar({ currentView, setCurrentView }) {
+  const menuItems = [
+    { id: "menu", label: "Manage Menu" },
+    { id: "users", label: "Manage Users" },
+    { id: "messages", label: "Manage Messages" },
+  ];
+
+  return (
+    <Paper elevation={1} sx={{ minHeight: "80vh", p: 2, borderRadius: "12px" }}>
+      <Typography variant="h6" sx={{ mb: 2, fontWeight: "bold", textAlign: "center" }}>
+        Admin Panel
+      </Typography>
+      <List>
+        {menuItems.map((item) => (
+          <ListItem key={item.id} disablePadding sx={{ mb: 1 }}>
+            <ListItemButton
+              selected={currentView === item.id}
+              onClick={() => setCurrentView(item.id)}
+              sx={{ borderRadius: "8px" }}
+            >
+              <ListItemText primary={item.label} />
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List>
+    </Paper>
+  );
 }
