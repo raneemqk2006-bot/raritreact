@@ -6,6 +6,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import UserProvider from './Context/usersContext.jsx'
 import { ProductProvider } from './Context/ProductContext.jsx'
 import { MessagesProvider } from './Context/messagesContext.jsx'
+import { MenuProvider } from './Context/MenuContext.jsx'
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -13,7 +15,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <UserProvider>
       <ProductProvider>
         <MessagesProvider>
+          <MenuProvider>
             <App />
+          </MenuProvider>
         </MessagesProvider>
       </ProductProvider>
     </UserProvider>

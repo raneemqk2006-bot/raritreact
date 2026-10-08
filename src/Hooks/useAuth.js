@@ -44,7 +44,7 @@ export const useAuth = () =>{
                 toast.error("Invalid email or password!");
                 return false;
             }
-            toast.success('Welcome back, ${user.name || "User"}!');
+            toast.success('Welcome back');
             return true;
         }catch(err){
             console.error(err);

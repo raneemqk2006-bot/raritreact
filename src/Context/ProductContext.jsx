@@ -4,8 +4,8 @@ export const productContext = createContext();
 
 export const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState([
-    { id: 1, name: "Hydrating Cream", price: 35, category: "Skincare", image: "https://via.placeholder.com/150" },
-    { id: 2, name: "Rose Cleanser", price: 22, category: "Cleanser", image: "https://via.placeholder.com/150" }
+    { id: 1, name: "beauty of joseon sunscreen", price: 14, category: "sunscreen", image: "https://via.placeholder.com/150" },
+    { id: 2, name: "anua serum calming green tea", price: 22, category: "serum", image: "https://via.placeholder.com/150" }
   ]);
 
   const addProduct = (newProduct) => {

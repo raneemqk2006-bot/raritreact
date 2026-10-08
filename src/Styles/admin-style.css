@@ -1,0 +1,82 @@
+.admin-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: #333;
+}
+.admin-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  color: #2b2b2b;
+  letter-spacing: -0.5px;
+}
+.admin-tab-btn {
+  padding: 8px 20px;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+.admin-tab-btn.active {
+  background-color: #333333 !important;
+  color: #ffffff !important;
+  border-color: #333333 !important;
+}
+
+.admin-tab-btn.inactive {
+  background-color: #e9e8e4 !important;
+  color: #555555 !important;
+  border: 1px solid #dcdbd7 !important;
+}
+.admin-tab-btn.inactive:hover {
+  background-color: #dfdeda !important;
+}
+.admin-section-title {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #2c2c2c;
+  margin-top: 1.5rem;
+}
+.admin-table-wrapper {
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+.admin-table thead tr {
+  background-color: #e8e7e3 !important;
+}
+
+.admin-table th {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #4a4a4a;
+  padding: 14px 16px;
+  border-bottom: none;
+}
+.admin-table tbody tr {
+  border-bottom: 1px solid #f0efe8;
+  transition: background-color 0.15s ease;
+}
+
+.admin-table tbody tr:hover {
+  background-color: #faf9f6;
+}
+
+.admin-table td {
+  padding: 14px 16px;
+  font-size: 0.95rem;
+  color: #333;
+}
+.btn-delete-admin {
+  background-color: #e06d53 !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 4px;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+.btn-delete-admin:hover {
+  opacity: 0.9;
+}

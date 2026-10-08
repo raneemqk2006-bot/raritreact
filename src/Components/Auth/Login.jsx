@@ -1,15 +1,36 @@
 import { useState } from 'react';
-import { Container, TextField, Paper, Button, Typography, Box } from '@mui/material';
+import { Container, TextField, Paper, Button, Typography, Box , Alert} from '@mui/material';
+import { useNavigate, Link } from 'react-router-dom';
 import {useAuth} from '../../Hooks/useAuth';
 
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
   const { login } = useAuth();
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
-    login({ email, password });
+    setError('');
+    try{
+      const res = await login({email, password});
+      if(res?.error){
+        setError(res.error);
+      }
+      else{
+        if(res?.role === 'admin'){
+          navigate('/admin');
+        }
+        else{
+          navigate('/');
+        }
+      }
+
+    }
+    catch(err){
+      setError('Invalid email or password. Please try again.');
+    }
   };
 
   return <>
@@ -63,6 +84,12 @@ export default function Login() {
           >
             Welcome Back
           </Typography>
+
+          {error && (
+            <Alert severity='error' sx={{ mb: 2, borderRadius: '12px'}}>
+              {error}
+            </Alert>
+          )}
 
           <Box component="form" onSubmit={handleSubmit} sx={{ display: 'flex', flexDirection: 'column', gap: 2.5 }}>
             <TextField 

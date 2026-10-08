@@ -5,8 +5,8 @@ import Shop from './Pages/Shop';
 import Register from './Components/Auth/Register';
 import Login from './Components/Auth/Login';
 import AdminDashboard from './Components/Admin/AdminDashboard';
-import Menu from './Menu/Menu.jsx';
 import { Toaster } from 'react-hot-toast';
+import ManageMessage from './Components/Admin/Manage/ManageMessages/ManageMessages.jsx';
 
 export default function App() {
   return (
@@ -17,9 +17,9 @@ export default function App() {
       <Route path="/about" element={<About />} />
       <Route path="/shop" element={<Shop />} />
       <Route path="/reg" element={<Register/>}/>
-      <Route path="/log" element={<Login/>}/>
+      <Route path="/login" element={<Login/>}/>
       <Route path="/admin" element={<AdminDashboard/>}/>
-      <Route path="/menu" element={<Menu/>}/>
+      <Route path="/feed" element={<ManageMessage/>}/>
     </Routes>
   </>
     
