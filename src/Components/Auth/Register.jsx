@@ -20,7 +20,11 @@ export default function Register() {
     if(!name || !email || !password || !confirmPassword){
       setError('Please fill in all fields.');
       return;
-    } 
+    }
+    if(password.length < 6){
+      setError('Password must be at least 6 Characters long.');
+      return;
+    }
     if(password != confirmPassword){
       setError('Password do not match.');
       return;
@@ -31,7 +35,7 @@ export default function Register() {
         setError(res.error);
       }
       else{
-        navigate('/login')
+        navigate('/log')
       }
     }
     catch(err){
@@ -178,7 +182,7 @@ export default function Register() {
 
             <Typography variant="body2" align="center" sx={{ mt: 1, color: '#666', fontSize: '0.8rem' }}>
               Already have an account?{' '}
-              <Link to="/login" style={{ color: '#222', fontWeight: 600, textDecoration: 'none' }}>
+              <Link to="/log" style={{ color: '#222', fontWeight: 600, textDecoration: 'none' }}>
                 Sign In
               </Link>
             </Typography>

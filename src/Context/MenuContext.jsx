@@ -1,8 +1,10 @@
-import React, {createContext, useState} from 'react';
+import React, {createContext, useState, useEffect} from 'react';
 export const MenuContext = createContext();
 export function MenuProvider({children}){
-    const [products, setProducts] = useState([
-        {
+    const [products, setProducts] = useState(() =>{
+        const savedProducts = localStorage.getItem('products');
+  return savedProducts ? JSON.parse(savedProducts) : [
+    {
             id: 1,
             title: "Beauty of Joseon Cleanser",
             description: "Refresh your skin with Beauty of Joseon Green Plum Cleanser. A gentel gel cleanser with plum water and mung bean extract...",
@@ -65,30 +67,67 @@ export function MenuProvider({children}){
             price: '19.80 JOD',
            imgSrc: '/Celimax - The Real Noni Moisture Balancing Toner.jpg'
     }
+]
+});
+        
+    const [cartCount, setCartCount] =useState(() => {
+        const savedCart = JSON.parse(localStorage.getItem('cart')) || [];
+    return savedCart.reduce((total, item) => total + (item.quantity || 1), 0);
+    });
 
-    ]);
-    const [cartCount, setCartCount] =useState(0);
-    const handleAddToCart = () =>{
-        setCartCount((prev) => prev + 1);
-            };
-    const addItem = (newItem) => {
-        setProducts((prevProducts) => [...prevProducts, {...newItem, id: DataTransfer.now()}]);
+    const [user, setUser] = useState(() => {
+    const savedUser = localStorage.getItem('user');
+    return savedUser ? JSON.parse(savedUser) : { name: "Raneem", role: "admin" };
+  });
 
-    };
-    const updateItem = (updateItem) => {
-        setProducts((prevProducts) =>
-        prevProducts.map((item) (item.id === updateItem.id ? updateItem : item))
-    );
-    };
-    const deleteItem = (id) => {
-        setProducts((prevProducts) => prevProducts.filter((item) => String(item.id) !== String(id)));
-    };
-    const [user, setUser] = useState({name: 'Admin User', role: 'admin'});
-    const updateUserRole = (newRole) => {
-        setUser((prev) => ({...prev, role: newRole}));
+  useEffect(() => {
+    localStorage.setItem('products', JSON.stringify(products));
+  }, [products]);
+
+  const addItem = (newItem) => {
+    setProducts((prev) => [...prev, { ...newItem, id: Date.now() }]);
+  };
+
+  const updateItem = (updatedItem) => {
+    setProducts((prev) => prev.map((item) => (item.id === updatedItem.id ? updatedItem : item)));
+  };
+
+  const deleteItem = (id) => {
+    setProducts((prev) => prev.filter((item) => String(item.id) !== String(id)));
+  };
+
+  const loginUser = (userData) => {
+    setUser(userData);
+    localStorage.setItem('user', JSON.stringify(userData));
+  };
+  const logoutUser = () => {
+    setUser(null);
+    localStorage.removeItem('user');
+  };
+
+  const updateUserRole = (newRole) => {
+    setUser((prev) => {
+      const updated = { ...prev, role: newRole };
+      localStorage.setItem('user', JSON.stringify(updated));
+      return updated;
+    });
+  };
+  const handleAddToCart = (product) => {
+    const existingCart = JSON.parse(localStorage.getItem('cart')) || [];
+    const existingIndex = existingCart.findIndex((item) => item.id === product.id);
+
+    if (existingIndex > -1) {
+      existingCart[existingIndex].quantity = (existingCart[existingIndex].quantity || 1) + 1;
+    } else {
+      existingCart.push({ ...product, quantity: 1 });
     }
+
+    localStorage.setItem('cart', JSON.stringify(existingCart));
+    setCartCount(existingCart.reduce((total, item) => total + (item.quantity || 1), 0));
+  };
+    
     return(
-        <MenuContext.Provider value={{ products,setProducts, cartCount, handleAddToCart, addItem, updateItem, deleteItem, user, updateUserRole}}>
+        <MenuContext.Provider value={{ products,setCartCount, setProducts,loginUser,logoutUser, cartCount, handleAddToCart, addItem, updateItem, deleteItem, user, updateUserRole}}>
             {children}
         </MenuContext.Provider>
     )

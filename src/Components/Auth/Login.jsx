@@ -1,37 +1,41 @@
 import { useState } from 'react';
 import { Container, TextField, Paper, Button, Typography, Box , Alert} from '@mui/material';
 import { useNavigate, Link } from 'react-router-dom';
-import {useAuth} from '../../Hooks/useAuth';
+
 
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const { login } = useAuth();
   const navigate = useNavigate();
-
-  const handleSubmit = async(e) => {
+  
+  const handleSubmit = (e) => {
     e.preventDefault();
     setError('');
-    try{
-      const res = await login({email, password});
-      if(res?.error){
-        setError(res.error);
+    if(!email || !password){
+      setError('Please fill in all fields.');
+      return;
+    }
+    if(password.length < 6){
+      setError('Password must be at least 6 characters long.');
+      return;
+    }
+      const adminEmail = 'raneem1234@gmail.com';
+      const role =(email.trim().toLowerCase() === adminEmail.toLowerCase()) ? 'admin' :'user';
+      const userData = {email, role};
+
+      localStorage.setItem('user', JSON.stringify(userData));
+
+      if(role === 'admin'){
+        navigate('/admin')
       }
       else{
-        if(res?.role === 'admin'){
-          navigate('/admin');
-        }
-        else{
-          navigate('/');
-        }
+        navigate('/profile');
       }
+    };
+  
 
-    }
-    catch(err){
-      setError('Invalid email or password. Please try again.');
-    }
-  };
+
 
   return <>
   

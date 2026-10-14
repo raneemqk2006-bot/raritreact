@@ -7,6 +7,9 @@ import Login from './Components/Auth/Login';
 import AdminDashboard from './Components/Admin/AdminDashboard';
 import { Toaster } from 'react-hot-toast';
 import ManageMessage from './Components/Admin/Manage/ManageMessages/ManageMessages.jsx';
+import ProtectedRoute from './Components/ProtectedRoute.jsx';
+import UserProfile from './Components/UserProfile.jsx';
+import Cart from './Pages/Cart.jsx';
 
 export default function App() {
   return (
@@ -17,8 +20,13 @@ export default function App() {
       <Route path="/about" element={<About />} />
       <Route path="/shop" element={<Shop />} />
       <Route path="/reg" element={<Register/>}/>
-      <Route path="/login" element={<Login/>}/>
-      <Route path="/admin" element={<AdminDashboard/>}/>
+      <Route path="/log" element={<Login/>}/>
+      <Route path='profile' element={<UserProfile/>}/>
+      <Route path="/cart" element={<Cart />}/>
+      <Route path="/admin" element={ 
+        <ProtectedRoute>
+          <AdminDashboard/>
+        </ProtectedRoute>}/>
       <Route path="/feed" element={<ManageMessage/>}/>
     </Routes>
   </>

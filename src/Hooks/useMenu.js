@@ -5,8 +5,8 @@ export const useMenu = () => {
   const [menu, setMenu] = useState(() => {
     const savedMenu = localStorage.getItem("menu");
     return savedMenu ? JSON.parse(savedMenu) : [
-      { id: 1, name: "Hydrating Cream", price: "25", description: "Moisturizer", quantity: 10 },
-      { id: 2, name: "Rose Cleanser", price: "18", description: "Facial wash", quantity: 5 }
+      { id: 1, name: "Beauty of Joseon Cleanser", price: "13.29 JOD", description: "Cleanser", quantity: 10 },
+      { id: 2, name: "Dr. Althea - 345 Relief Cream", price: "20 JOD", description: "Moistruizer", quantity: 5 }
     ];
   });
 
@@ -20,6 +20,32 @@ export const useMenu = () => {
       console.log(error);
     }
   };
+  const addMenuItem = (newItem) => {
+    try {
+      const updatedMenu = [...menu, { ...newItem, id: Date.now() }];
+      setMenu(updatedMenu);
+      localStorage.setItem("menu", JSON.stringify(updatedMenu));
+      toast.success("Item added successfully!");
+    } catch (error) {
+      console.log(error);
+      toast.error("Failed to add item");
+    }
+  };
+
+  const updateMenuItem = (updatedItem) => {
+    try {
+      const updatedMenu = menu.map((item) => 
+        item.id === updatedItem.id ? updatedItem : item
+      );
+      setMenu(updatedMenu);
+      localStorage.setItem("menu", JSON.stringify(updatedMenu));
+      toast.success("Item updated successfully!");
+    } catch (error) {
+      console.log(error);
+      toast.error("Failed to update item");
+    }
+  };
+
 
   const deleteMenuItem = (id) => {
     try {
@@ -37,5 +63,5 @@ export const useMenu = () => {
     fetchAllMenuItem();
   }, []);
 
-  return { menu, fetchAllMenuItem, deleteMenuItem };
+  return { menu,addMenuItem, updateMenuItem, fetchAllMenuItem, deleteMenuItem };
 };

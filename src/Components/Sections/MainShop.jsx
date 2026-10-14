@@ -78,7 +78,7 @@ export default function MainShop() {
                   </div>
                   <div className="mt-auto pt-2">
                     <button 
-                      onClick={handleAddToCart} 
+                      onClick={() => handleAddToCart(product)} 
                       className="btn btn-primary w-100 mb-2"
                     >
                       ADD TO CART
